@@ -13,3 +13,7 @@ task "myTask3"
 task myTask4
 myTask4.description = "This is what's shown in the task list"
 myTask4.group = "This is the heading for this task in the task list"
+myTask4.doLast {println "Do this last"}
+myTask4.doFirst {println "Do this first"}
+myTask4.leftShift {println "Do this even more last"}
+myTask4 << {println "Do this last of all"}
