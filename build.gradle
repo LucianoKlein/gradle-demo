@@ -46,3 +46,12 @@ task brushYourTeeth {
 task getReady {
     dependsOn = ["takeShower", "eatBreakfast", "putOnShoes"]
 }
+
+putOnShoes.shouldRunAfter takeShower
+
+task getEquipped {
+    dependsOn tasks.matching { task -> task.name.startsWith("putOn")}
+    doLast {
+        println "All geared up"
+    }
+}
