@@ -11,3 +11,5 @@ task "myTask3"
 
 //最牛版本
 task myTask4
+myTask4.description = "This is what's shown in the task list"
+myTask4.group = "This is the heading for this task in the task list"
