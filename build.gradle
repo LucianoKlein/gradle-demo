@@ -17,3 +17,6 @@ myTask4.doLast {println "Do this last"}
 myTask4.doFirst {println "Do this first"}
 myTask4.leftShift {println "Do this even more last"}
 myTask4 << {println "Do this last of all"}
+task myTask5 {
+    println "Here is how to declare a task and give it an action in one stroke"
+}
