@@ -5,18 +5,10 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
-project.task("myTask1")
-task("myTask2")
-task "myTask3"
-
-//最牛版本
-task myTask4
-myTask4.description = "This is what's shown in the task list"
-myTask4.group = "This is the heading for this task in the task list"
-myTask4.doLast {println "Do this last"}
-myTask4.doFirst {println "Do this first"}
-myTask4.leftShift {println "Do this even more last"}
-myTask4 << {println "Do this last of all"}
-task myTask5 {
-    println "Here is how to declare a task and give it an action in one stroke"
+task myTask6 {
+    description "Here's a task with a configuration block"
+    group "Some group"
+    doLast {
+        println "Here is the action"
+    }
 }
