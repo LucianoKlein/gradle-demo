@@ -6,9 +6,12 @@
  */
 
 task groovy << {}
-def myList = ["Gradle", "Groovy", "Android"]
+class GroovyGreeter {
+    String greeting = "Default greeting"
+    def printGreeting() {println "Greeting: $greeting"}
+}
+def myGroovyGreeter = new GroovyGreeter()
 
-def printItem = {item -> println "List item: $item"}
-// myList.each(printItem)
-
-myList.each{println "Compactly printing each list item: $it"}
+myGroovyGreeter.printGreeting()
+myGroovyGreeter.greeting = "My custom greeting"
+myGroovyGreeter.printGreeting()
