@@ -5,23 +5,16 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
-task myTask6 {
-    description "Here's a task with a configuration block"
-    group "Some group"
+
+task putOnSocks {
     doLast {
-        println "Here is the action"
+        println "Putting on Socks."
     }
 }
 
-task myTask7 {
-    description("Description")
-    group = "Some group"
+task putOnShoes {
+    dependsOn "putOnSocks"
     doLast {
-        println "${group}"
-        println "${description}"
+        println "Putting on Shoes."
     }
 }
-task myTask8(description: "Another description") << {
-    println "Doing something"
-}
-
