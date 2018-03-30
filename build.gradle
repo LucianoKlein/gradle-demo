@@ -4,16 +4,15 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
+ task takeShower {
+     doLast {
+         println "Taking a shower"
+     }
+ }
 
-task eatBreakfast {
-    finalizedBy "brushYourTeeth"
+task putOnFragrance {
+    shouldRunAfter "takeShower"
     doLast {
-        println "Om nom nom breakfast！"
-    }
-}
-
-task brushYourTeeth {
-    doLast {
-        println "Brushie Brushie Brushie"
+        println "Smellin' fresh!"
     }
 }
