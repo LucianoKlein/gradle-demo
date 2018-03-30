@@ -10,8 +10,13 @@ class GroovyGreeter {
     String greeting = "Default greeting"
     def printGreeting() {println "Greeting: $greeting"}
 }
-def myGroovyGreeter = new GroovyGreeter()
 
-myGroovyGreeter.printGreeting()
-myGroovyGreeter.greeting = "My custom greeting"
-myGroovyGreeter.printGreeting()
+def myGroovyGreeter = new GroovyGreeter();
+
+def greetingClosure = {
+    greeting = "Setting the greeting from a closure"
+    printGreeting()
+}
+
+greetingClosure.delegate = myGroovyGreeter
+greetingClosure()
