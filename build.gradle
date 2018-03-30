@@ -12,3 +12,13 @@ task myTask6 {
         println "Here is the action"
     }
 }
+
+task myTask7 {
+    description("Description")
+    group = "Some group"
+    doLast {
+        println "${group}"
+        println "${description}"
+    }
+}
+
