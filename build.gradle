@@ -21,4 +21,7 @@ task myTask7 {
         println "${description}"
     }
 }
+task myTask8(description: "Another description") << {
+    println "Doing something"
+}
 
