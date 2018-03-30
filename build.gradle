@@ -6,3 +6,8 @@
  */
 
 project.task("myTask1")
+task("myTask2")
+task "myTask3"
+
+//最牛版本
+task myTask4
