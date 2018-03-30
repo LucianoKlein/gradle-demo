@@ -5,16 +5,15 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
-
-task putOnSocks {
+task eatBreakfast {
+    finalizedBy "brushYourTeeth"
     doLast {
-        println "Putting on Socks."
+        println "Om nom nom breakfast！"
     }
 }
 
-task putOnShoes {
-    dependsOn "putOnSocks"
+task brushYourTeeth {
     doLast {
-        println "Putting on Shoes."
+        println "Brushie Brushie Brushie"
     }
 }
