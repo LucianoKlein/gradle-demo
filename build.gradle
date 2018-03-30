@@ -9,4 +9,6 @@ task groovy << {}
 def myList = ["Gradle", "Groovy", "Android"]
 
 def printItem = {item -> println "List item: $item"}
-myList.each(printItem)
+// myList.each(printItem)
+
+myList.each{println "Compactly printing each list item: $it"}
