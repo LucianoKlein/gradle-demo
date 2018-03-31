@@ -4,3 +4,4 @@ gradlew.bat
 .vscode/
 .settings/
 .gradle/
+build/
