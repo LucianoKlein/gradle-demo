@@ -4,42 +4,14 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
-task copyImages(type: Copy){
-    from 'images'
-    into 'build'
-}
-
-task copyJpegs(type: Copy) {
-    from 'images'
-    include '*.jpg'
-    into 'build'
-}
-
-task copyImageFolders(type: Copy) {
-    from('image') {
-        include '*.jpg'
-        into 'jpeg'
-    }
-    from('images') {
-        include '*.git'
-        into 'gif'
-    }
-    into 'build'
-}
-
-task zipImageFolder(type: Zip) {
-    baseName = 'images'
-    destinationDir = file('build')
-    from('images') {
-        include '*.jpg'
-        into 'jpeg'
-    }
-    from('images') {
-        include '*.gif'
-        into 'gif'
+class HelloName extends DefaultTask {
+    String firstName
+    @TaskAction
+    void doAction() {
+        println "Hello $firstName"
     }
 }
 
-task deleteBuild(type: Delete) {
-    delete 'build'
+task helloName(type: HelloName) {
+    firstName = 'XIN'
 }
